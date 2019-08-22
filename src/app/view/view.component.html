@@ -2,10 +2,30 @@
 Name of owner: {{Name}} <br>
 Age of owner: {{age}} <br>
 Address: {{Address.no}}, {{Address.street}} <br>
-Hobbies: 
-<ul><li *ngFor="let hb of Hobbies">{{hb}}</li></ul>
+
+<h3>Hobbies: </h3>
 <table border="1">
-    <tr *ngFor="let hb of Hobbies">
-        <td>{{hb}}</td>
+    <tr *ngFor="let hb of Hobbies;let i = index">
+        <td>{{i+1}}</td><td>{{hb}}</td>
+        
     </tr>
 </table>
+<br>
+<input type="button" name="addfood" value="Add Food" (click)="add()"/>
+<input type="button" name="addfood" value="Remove Food" (click)="remove()"/>
+<h3>Food:</h3>
+<table border="1">
+    <tr>
+        <td>Days</td>
+        <td>Breakfast</td>
+        <td>Lunch</td>
+        <td>Dinner</td>
+    </tr>
+    <tr *ngFor="let m of meals;let i= index">
+        <td>Day {{i+1}}</td>
+        <td>{{m.breakfast}}</td>
+        <td>{{m.lunch}}</td>
+        <td>{{m.dinner}}</td>
+    </tr>
+</table>
+

@@ -10,14 +10,26 @@ export class ViewComponent implements OnInit {
   age:Number;
   Address;
   Hobbies:String[];
+  //food:{breakfast:"Milk",lunch:"Fish",dinner:"Meat"}
+  meals=[];
   constructor() {
 
     this.Name="Amy";
     this.age=20;
     this.Address={no:486,street:"line1"};
-    this.Hobbies=["Reading","Dancing"];
+    this.Hobbies=["Meowing","Playing","Sleeping"];
+    this.meals=[{breakfast:"Milk",lunch:"Fish",dinner:"Meat"},{breakfast:"Biscuits",lunch:"Chicken",dinner:"Fish"}]
    }
 
+
+   public add(){
+      let data={breakfast:"Rice",lunch:"Meat",dinner:"Milk"};
+      this.meals.push(data);
+   }
+
+   public remove(){
+     this.meals.pop();
+   }
 
   ngOnInit() {
   }
